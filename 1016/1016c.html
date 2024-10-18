@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 請使用輸入視窗(promt)來輸入任意值，並檢查是不是偶數
+        var num = window.prompt('請輸入任意數字');
+        // typeof(值)=> 檢測資料型別
+        // Number(值) => 字串轉數值(保留小數)
+        // pareInt(值)=> 字串轉數值(只保留整數，小數直接刪除)// console.log(pareInt(num));
+
+        // console.log(Number(num));
+        if (isNaN(Number(num))) {
+            console.log('非數值，無法判斷是奇偶數');
+        }else {
+            if (num % 2 === 0) {
+                console.log(num + '=>是偶數');
+            } else {
+                console.log(num + '=>是奇數');
+            }
+           
+        }
+
+
+
+    </script>
+</body>
+
+</html>

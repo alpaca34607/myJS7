@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="add();">+</button>
+    <button onclick="sub();">-</button>
+    <button onclick="mul();">*</button>
+    <button onclick="dev();">/</button>
+    <button onclick="rem();">取餘數</button>
+
+    <script>
+        var a = 5;
+        var b = 3;
+
+        // function 涵式名稱(){....}
+        // 加法涵式
+
+        function add() {
+            console.log(`${a}+${b}=${a + b}`);
+        }
+
+        // 減法涵式
+
+        function sub() {
+            console.log(`${a}-${b}=${a - b}`);
+        }
+
+        // 乘法涵式
+
+        function mul() {
+            console.log(`${a}*${b}=${a * b}`);
+        }
+
+        // 除法涵式 一次性寫法
+
+        // function dev() {
+        //     console.log(`${a}/${b}=${(a / b).toFixed(2)}`);
+        // }
+
+        // 除法涵式 先求解答再進位小數點寫法
+        function dev(){
+            var result = a / b;
+            result =result.toFIxed(2);
+            console.log (`${a}/${b}=${result}`);
+        }
+
+        // 取餘數涵式
+
+        function rem() {
+            console.log(`${a}%${b}=${a % b}`);
+        }
+    </script>
+
+</body>
+
+</html>
