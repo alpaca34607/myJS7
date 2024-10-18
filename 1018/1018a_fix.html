@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        while (true) {
+            var user = window.prompt('請輸入帳號');
+
+            // 按了取消
+            if (user == null) {
+                alert('取消登入');
+                break;
+            }
+
+            if (user.trim() == '') {
+                alert('不能沒有內容');
+                continue;
+            }
+
+            if (user !== 'admin') {
+                alert('查無此帳號');
+                continue;
+            }
+
+            alert('請接著輸入密碼');
+            break;
+        }
+
+        // 只有在帳號正確後才進入密碼驗證
+        if (user === 'admin') {
+            while (true) {
+                var password = window.prompt('請輸入密碼');
+
+                // 按了取消
+                if (password == null) {
+                    alert('取消登入');
+                    break;
+                }
+
+                if (password.trim() == '') {
+                    alert('不能沒有內容');
+                    continue;
+                }
+
+                if (password !== '1234') {
+                    alert('密碼錯誤');
+                    continue;
+                }
+
+                alert('歡迎登入');
+                break;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
