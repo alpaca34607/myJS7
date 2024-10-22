@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var a= 11;
+        // while ( a < 10 ){
+        //     //a++
+        //     a=a+1;
+        // }
+        // comsole.log(a); //a=11
+        // //
+        // // do while 不經過檢查直接運行，b=11時未先經過檢查到b++=12。跑回圈後檢查b不符合<10於是停下
+        // var b =11;
+        // do{
+        //     //b++
+        //     b = b+1;
+        // }while ( b < 10 );
+        // console.log(`b=${b}`) //b=12
+
+        // 不斷填出輸入視窗
+        // 方法1
+        var score = ' ';
+        while (true) {
+        var score = prompt('請輸入分數');
+        if (score == null) {
+                break;
+        }
+    }
+
+        // 方法2
+        var score = '';
+       while (score == null) {prompt('請輸入分數');
+        
+            
+        }
+
+        //    方法3
+        do {
+            var score = prompt ('請輸入分數')
+            //if(score == null) {
+            // break;
+        // }
+        } while (score != null);
+
+        // 使用for
+        var score=''
+        for(var a = 1; score != null ;a++ ){
+            var score = prompt('請輸入分數');
+            
+        }
+
+
+    </script>
+</body>
+
+</html>
