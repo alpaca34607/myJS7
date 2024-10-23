@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="count">1</p>
+    <button onclick=" addCount() ">+1</button>
+    <button onclick=" subCount() ">-1</button>
+    <button onclick=" getCount('+') ">+</button>
+    <button onclick=" getCount('-') ">-</button>
+
+
+    <script>
+
+        // 共同用一個涵式，處理+1-1
+        function getCount(op){
+            var count =document.getElementById('count');
+
+        if (op == '+'){
+            count.innerHTML = String(Number(count.innerHTML) + 1);
+        } else if (op =='-'){
+            count.innerHTML = String(Number(count.innerHTML) - 1);
+
+        }
+        }
+       
+
+        // +1
+        function addCount() {
+
+            var count = document.getElementById('count');
+            // typeof(變數或資料或運算式)=> 查看資料類型
+            // console.log(typeof(count));//檢查型別是字串還是數字
+            // Number => 轉成數字 String =>轉回到字串
+            count.innerHTML = String(Number(count.innerHTML) + 1);
+
+        }
+        // -1
+        function subCount() {
+            var count = document.getElementById('count');
+            count.innerHTML = String(Number(count.innerHTML) - 1);
+
+
+        }
+
+
+    </script>
+
+    <!-- 使用監聽事件的方式呼叫涵式 -->
+      <!--用於在底下分類按鈕的功能 ex:如按鈕同時有其他特效  -->
+    <button id="btn1">Say Hi</button>
+
+    <script>
+var btn1=document.getElementById('btn1')
+// btn1.addEventListener('click',sayHi);
+
+// function sayHi(){
+//     console.log('Hi')
+// }
+
+btn1. addEventListener('click',() =>{
+    console.log('Hi2')})
+    </script>
+
+</body>
+
+</html>

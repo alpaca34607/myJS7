@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    圓面積 <P id='myP1'></P>
+    BMI <P id='myP2'></P>
+    <button onclick="change3()">計算面積</button>
+    <button onclick="change4()">計算BMI</button>
+    <script>
+        // 1. 建立一個涵式。傳參數r
+        // 輸入半徑r,算出面積=3.14*r*r
+        // 回傳面積結果在頁面的段落1
+        // 半徑:? 園面積:?
+        
+        var change3 = () => {var radius =5;
+        var p1 = document.getElementById('myP1');
+        p1.innerHTML = (`半徑為:${radius} 面積為:${radius*radius*3.14}`);}
+
+        
+    
+
+
+        // 2.建立一個函式,傳參數身高，體重
+        // 算出BMI= 體重(公斤)/ 身高2(公尺2)
+        // 並回傳BMI結果在頁面的段落2
+        // BMI=? 體重過輕/正常範圍/異常範圍)=>
+        var H =1.6;
+        var W =48;
+        if((W/(H*H))< 18.5){bmi='體重過輕'};
+        if( 18.5 <= (W/(H*H)) < 24){bmi='正常範圍'};
+        if(24<=(W/(H*H))){bmi='體重過重'};
+
+        var change4 =function(){
+        var p2 = document.getElementById('myP2');
+        
+         
+
+        
+
+        p2.innerHTML = (`身高為:${H}<br> 體重為:${W}<br>BMI為:${W/(H*H)}<br>${bmi}`)}
+
+
+    </script>
+    
+</body>
+</html>
