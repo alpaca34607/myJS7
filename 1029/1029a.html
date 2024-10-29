@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 建立變數值
+        // var book1 ='HTML';
+        // var book2 ='CSS';
+        // var book3 ='JavaScript';
+        // console.log(book1);
+        // console.log(book2);
+        // console.log(book3);
+
+
+        // 建立一個陣列
+        var books=['HTML','CSS','JavaScript'];
+    //    console.log(books);
+    //    console.log(typeof books);//察看元素是什麼類型的型別，在陣列中都是物件
+        // 讀取指定編號的陣列值=> 陣列名稱[陣列編號]
+        console.log(books[1]);
+        console.log(books[3]); //避免!!超過索引範圍(陣列編號)，所以回傳undefined
+        
+        //改變陣列中現有的值
+        books[2]='JS' ;
+        console.log(books[2]); 
+        //寫入陣列中不存在的編號是允許的
+        books[3] = 'abc';
+        console.log(books[3]);
+        console.log(books);
+
+        // 取得陣列的長度
+        // console.log(books.length);
+
+        // 取出列所有值
+        // 方法一for
+        for(var i=0;i < books.length; i++){
+            document.write(books[i]+'<br>');
+        }
+        document.write('<hr>');
+        // 方法二 for of
+        for(var a of books){
+            document.write(a)
+            document.write('<br>');
+        }
+        document.write('<hr>');
+        // 方法三forEach
+        books.forEach((b)=>{
+            document.write(b)
+            document.write('<br>');
+        });
+        document.write('<hr>');
+        // 方法四 map
+        books.map((c)=>{
+            document.write(c);
+            document.write('<br>');
+        });
+
+
+        
+
+
+        </script>
+</body>
+</html>
