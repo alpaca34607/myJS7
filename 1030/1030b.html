@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 亂數產生大樂透6數碼(不重覆)
+        var lott = []
+        for (var i = 1; i < 6; i++) {
+            // 亂數
+            var no = Math.floor(Math.random() * 49) + 1;
+            // 篩選是否重複
+            if (lott.includes(no)){
+                // 有找到 =>重複
+                i=i-1; //i-- (取消已重複數字回到前一步再生一個亂數)
+                continue;
+            } else {
+                // 沒找到 =>沒重複
+                lott[i] = no;
+            }
+           }
+            console.log(lott);
+            console.log(`第一區號碼:${lott}`);
+
+
+            // 1-49 號產生1個特別號(不可以跟前6個號碼重複)
+            while(true){
+                var finf_flag =false; //存放是否有找到(重複)的變數
+                var sno =Math.floor(Math.random() *49)+1;
+                
+            if (lott.includes(sno)){
+                // 有找到 =>重複
+                continue;
+                
+            } else {
+                // 沒找到 =>沒重複
+                lott.push(sno);
+                break;
+            } 
+        }
+        console.log(`特:${lott[lott.length-1]}`);
+        console.log(`特:${sno}`);
+       
+            
+
+
+        
+
+
+
+    </script>
+
+</body>
+
+</html>

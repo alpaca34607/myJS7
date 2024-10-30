@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 建立一個通用的函式
+        // max 最大號碼 //count 幾個號碼 //secFlag 有沒有特殊碼,secCount,secMax
+        function getLottNum(lottName, count, max, secFlag, secMax) {
+
+            var lott = [];
+            // 第一區號碼
+            for (var i = 0; i < count; i++) {
+                // 亂數
+                var no = Math.floor(Math.random() * max) + 1;
+                // 篩選是否重複
+                if (lott.includes(no)) {
+                    // 有找到 =>重複
+                    i = i - 1; //i-- (取消已重複數字回到前一步再生一個亂數)
+                    continue;
+                } else {
+                    // 沒找到 =>沒重複
+                    lott[i] = no;
+                }
+            }
+        console.log(`${lottName}第一區號碼:${lott}`);
+
+            // 第二區號碼
+            if (secFlag == 'Y') {
+                while (true) {
+
+                    var sno = Math.floor(Math.random() * secMax) + 1;
+                    if (lottName == '威力彩') {
+                        break;
+                    }
+                    if (lottName == '大樂透') {
+                        if (lott.includes(sno)) {
+                            // 有找到 =>重複
+                            continue;
+                        } else {
+                            // 沒找到 =>沒重複
+                            lott.push(sno);
+                            break;
+                        }
+                    }
+                }
+                console.log(`${lottName}第二區:${sno}`);
+            }
+        }
+
+        var gameNo = window.prompt('請輸入遊戲代號:1 大樂透 2 威力彩 3 今彩');
+        if(gameNo === '1'){
+            // 產生大樂透號碼
+            getLottNum('大樂透',6,49,'Y',49);
+        } else if(gameNo === '2'){
+            // 產生大樂透號碼
+            getLottNum('大樂透',6,38,'Y',8);
+            
+         } else if (gameNo ==='3') {
+            // 產生大樂透號碼
+            getLottNum('今彩',5,39,'N',0);
+         } else {
+            console.log('代號err');
+         }
+        
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

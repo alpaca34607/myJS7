@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 輸入1 產生大樂透號碼6碼(1~49) + 特別號(1~49)
+        // 輸入2 產生威力彩碼6碼(1~38) + 特別號(1~8)
+        // 輸入3 產生今彩號碼5碼(1~39) 無特別號
+
+       
+      
+        var input = window.prompt('請輸入想要下注的項目(1,2,3)')
+        
+        if (input === '1') { var max = 49; var smax = 49; var x = 6 ;}
+        else if (input === '2') { var max = 38; var smax = 8; var x = 6 ;}
+        else if (input === '3') { var max = 39; var x = 5 ;}
+        else {
+            document.write('代號err');
+        }
+
+        function getRandom(min, max) {
+            var min=1
+            var lott = [];
+            for (var i = 1; i <= x; i++) {
+
+                // 取亂數
+                var no = Math.floor(Math.random() * max) + min;
+
+
+                // 篩選是否重複
+                if (lott.includes(no)) {
+                    // 有找到 =>重複
+                    i = i - 1; //i-- (取消已重複數字回到前一步再生一個亂數)
+                    continue;
+                } else {
+                    // 沒找到 =>沒重複
+                    lott[i] = no;
+                    break;
+                }
+            }
+        }
+            console.log(`第一區號碼:${lott}`);
+
+
+            // 1-max 號產生1個特別號(不可以跟前x個號碼重複)
+            while (true) {
+                if (input === '3') { break; }
+
+                var sno = Math.floor(Math.random() * smax) + 1;
+
+                if (lott.includes(sno)) {
+                    // 有找到 =>重複
+                    continue;
+
+                } else {
+                    // 沒找到 =>沒重複
+                    lott.push(sno);
+                    break;
+                }
+            }
+        
+        document.write(`第二區號碼:${sno}`);
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
