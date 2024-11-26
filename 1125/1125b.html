@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li id="one" class="subjects">HTML</li>
+        <li id="two" class="subjects">CSS</li>
+        <li id="tree" class="subjects">Javascript</li>
+    </ul>
+    <ul>
+        <li class="drinks">冰美式</li>
+        <li class="drinks">冰拿鐵</li>
+        <li class="drinks">紅茶</li>
+    </ul>
+    <script>
+        // 取得HTML標籤內容
+        // let subjects =document.getElementsByTagName('li');
+        // let subjects = document.querySelectorAll('ul li');
+        // 使用類別名稱取得標籤內容
+        // let subjects = document.getElementsByClassName('subjects');
+        let subjects = document.querySelector('.subjects').textContent;
+        // console.log(subjects);
+
+          for (let i = 0; i < subjects.length; i++) {
+        console.log(subjects[i].innerHTML);
+        }
+
+        // 使用id名稱取得標籤內容
+        //  let subject = document.getElementById('two').textContent;
+        // let subject=document.querySelector('#two').textContent;
+        // console.log(subject);
+        
+
+    </script>
+</body>
+
+</html>
